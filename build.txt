@@ -1,0 +1,3 @@
+npm run build:win  # For Windows (.exe)
+npm run build:mac  # For macOS (.dmg)
+npm run build:linux # For Linux (.AppImage)
