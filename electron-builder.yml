@@ -1,5 +1,5 @@
-appId: com.electron.app
-productName: portfolio-task1
+appId: com.portfolio.zennotes
+productName: ZenNotes
 directories:
   buildResources: build
 files:

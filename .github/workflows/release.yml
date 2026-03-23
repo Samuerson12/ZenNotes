@@ -27,13 +27,15 @@ jobs:
         run: npm ci
 
       - name: Build and Package Electron App
+        # Standardized: Use '-- --publish always' to force .yml metadata generation 
+        # for all operating systems.
         run: |
           if [ "$RUNNER_OS" == "Windows" ]; then
-            npm run package:win
+            npm run package:win -- --publish always
           elif [ "$RUNNER_OS" == "macOS" ]; then
-            npm run package:mac
+            npm run package:mac -- --publish always
           else
-            npm run package:linux
+            npm run package:linux -- --publish always
           fi
         shell: bash
         env:
@@ -46,7 +48,10 @@ jobs:
           path: |
             dist/*.exe
             dist/*.dmg
+            dist/*.zip
             dist/*.AppImage
+            dist/*.yml
+            dist/*.blockmap
           retention-days: 90
 
       - name: Upload to GitHub Release
@@ -56,7 +61,10 @@ jobs:
           files: |
             dist/*.exe
             dist/*.dmg
+            dist/*.zip
             dist/*.AppImage
+            dist/*.yml
+            dist/*.blockmap
           draft: false
           prerelease: false
         env:
