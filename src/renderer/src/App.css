@@ -2,10 +2,27 @@
 .container {
   padding: 20px;
   font-family: sans-serif;
+  position: relative;
+  min-height: 100vh;
 }
 
 .title {
   color: white;
+}
+
+/* Version Tag (Top Right of viewport) */
+.version-tag {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  font-size: 12px;
+  color: #666;
+  background-color: rgba(240, 240, 240, 0.95);
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-weight: bold;
+  border: 1px solid #ddd;
+  z-index: 9999;
 }
 
 /* Input Area */
@@ -27,9 +44,9 @@
   padding: 8px 12px;
 }
 
-/* Note Item */
+/* Note Item (Reverted to Sticky Note Style) */
 .note-item {
-  background: #fff9c4;
+  background: #fff9c4; /* Sticky note yellow */
   padding: 12px;
   border-radius: 6px;
   display: flex;
