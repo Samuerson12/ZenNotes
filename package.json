@@ -1,6 +1,6 @@
 {
   "name": "ZenNotes",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ZenNotes Desktop Application",
   "main": "./out/main/index.js",
   "author": "Samuel Chang",
