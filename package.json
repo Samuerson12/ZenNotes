@@ -1,6 +1,6 @@
 {
   "name": "ZenNotes",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "description": "ZenNotes Desktop Application",
   "main": "./out/main/index.js",
   "author": "Samuel Chang",
@@ -20,6 +20,9 @@
   "build": {
     "productName": "ZenNotes",
     "appId": "com.portfolio.zennotes",
+    "directories": {
+      "output": "dist"
+    },
     "publish": [
       {
         "provider": "github",
@@ -27,23 +30,24 @@
         "repo": "ZenNotes"
       }
     ],
-    "directories": {
-      "output": "dist"
-    },
     "mac": {
       "icon": "resources/icon.icns",
+      "artifactName": "${productName}-${version}-${arch}.${ext}",
       "target": [
-        "dmg"
+        "dmg",
+        "zip"
       ]
     },
     "win": {
       "icon": "resources/icon.ico",
+      "artifactName": "${productName}-Setup-${version}.${ext}",
       "target": [
         "nsis"
       ]
     },
     "linux": {
       "icon": "resources/icon.png",
+      "artifactName": "${productName}-${version}.${ext}",
       "target": [
         "AppImage"
       ]
