@@ -20,26 +20,40 @@
   "build": {
     "productName": "ZenNotes",
     "appId": "com.portfolio.zennotes",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "Samuerson12",
+        "repo": "ZenNotes"
+      }
+    ],
     "directories": {
       "output": "dist"
     },
     "mac": {
       "icon": "resources/icon.icns",
-      "target": ["dmg"]
+      "target": [
+        "dmg"
+      ]
     },
     "win": {
       "icon": "resources/icon.ico",
-      "target": ["nsis"]
+      "target": [
+        "nsis"
+      ]
     },
     "linux": {
       "icon": "resources/icon.png",
-      "target": ["AppImage"]
+      "target": [
+        "AppImage"
+      ]
     }
   },
   "dependencies": {
     "@electron-toolkit/preload": "^3.0.2",
     "@electron-toolkit/utils": "^4.0.0",
     "date-fns": "^4.1.0",
+    "electron-updater": "^6.8.3",
     "react": "^19.2.1",
     "react-dom": "^19.2.1"
   },
