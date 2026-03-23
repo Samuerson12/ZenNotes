@@ -11,7 +11,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest, macos-latest]
+        os: [windows-latest, macos-latest, ubuntu-latest]
 
     steps:
       - name: Checkout Repository
@@ -30,8 +30,10 @@ jobs:
         run: |
           if [ "$RUNNER_OS" == "Windows" ]; then
             npm run package:win
-          else
+          elif [ "$RUNNER_OS" == "macOS" ]; then
             npm run package:mac
+          else
+            npm run package:linux
           fi
         shell: bash
         env:
