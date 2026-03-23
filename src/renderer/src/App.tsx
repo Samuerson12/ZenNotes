@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { format } from 'date-fns';
+import './App.css';
+import packageJson from '../../../package.json';
 
-// Component 1: Individual Note Item (Reverted to your original sticky note style)
+// Component 1: Individual Note Item (Sticky note style)
 function NoteItem({ note, onDelete }: { note: any; onDelete: (id: number) => void }) {
   return (
     <div className="note-item">
@@ -51,8 +53,7 @@ function NoteInput({ onAdd }: { onAdd: (text: string) => void }) {
 function App() {
   const [notes, setNotes] = useState<{ id: number; text: string; timestamp: Date }[]>([]);
   
-  // Set to "1.0.0" for first release, "1.1.0" for the update demonstration
-  const appVersion = "1.0.0"; 
+  const appVersion = packageJson.version; 
 
   const addNote = (text: string) => {
     setNotes([...notes, { id: Date.now(), text, timestamp: new Date() }]);
@@ -61,7 +62,6 @@ function App() {
   const deleteNote = (id: number) => {
     setNotes(notes.filter(note => note.id !== id));
   };
-
 
   return (
     <>
